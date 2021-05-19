@@ -1,0 +1,63 @@
+<head>
+  <style>
+    div {
+      font-size: 1cm;
+      text-align: center;
+      padding: 280px 0;
+    }
+  </style>
+  <div>Number Sorter</div>
+  <script>
+    "use strict";
+
+    // making arrays
+
+    let numbersUpward = [];
+    let numbersDownward = [];
+    let numberCount = prompt("How many Numbers");
+
+    // filling asending number array
+
+    for (let i = 1; i <= numberCount; i++) {
+      numbersUpward.push(prompt(`Number ${i}?`));
+    }
+
+    // sorting the asending array
+
+    // desending array fill up with asending arrays data
+    // desending array sorts to desending
+
+    numbersUpward.sort((a, b) => b - a);
+    numbersDownward = numbersUpward.slice();
+    numbersDownward.sort((a, b) => a - b);
+
+    // setting "MAX" variable to the highest value
+
+    let max = 0;
+    let min = numbersUpward[0];
+    for (let i = 0; i <= numbersUpward.length; i++) {
+      if (numbersUpward[i] > max) {
+        max = numbersUpward[i];
+      }
+    } // setting "MAX" variable to the highest value
+
+    for (let i = 0; i <= numbersUpward.length; i++) {
+      if (numbersUpward[i] < min) {
+        min = numbersUpward[i];
+      }
+    }
+    -(
+      // console.log(max);
+      // console.log(min);
+
+      // displaying the data
+
+      alert(
+        `|| Highest: ${max} 
+|| Lowest: ${min} 
+|| All in highest to lowest: ${numbersUpward}  
+|| All in lowest to highest: ${numbersDownward}`
+      )
+    );
+  </script>
+</head>
